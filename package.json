@@ -12,6 +12,6 @@
     "packages/angular/*"
   ],
   "scripts": {
-    "login": "yarn workspace @mono/login ng serve"
+    "login": "yarn workspace @gota/login ng serve"
   }
 }
