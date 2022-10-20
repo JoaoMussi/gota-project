@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface GotaButton {
+        /**
+          * The button label
+         */
+        "label": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +28,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLGotaButtonElement extends Components.GotaButton, HTMLStencilElement {
+    }
+    var HTMLGotaButtonElement: {
+        prototype: HTMLGotaButtonElement;
+        new (): HTMLGotaButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +41,17 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "gota-button": HTMLGotaButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface GotaButton {
+        /**
+          * The button label
+         */
+        "label"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +67,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "gota-button": GotaButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +75,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "gota-button": LocalJSX.GotaButton & JSXBase.HTMLAttributes<HTMLGotaButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
