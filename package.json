@@ -9,9 +9,11 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "packages/angular/*"
+    "packages/angular/*",
+    "packages/stencil/*"
   ],
   "scripts": {
-    "login": "yarn workspace @gota/login ng serve"
+    "login": "yarn workspace @gota/login ng serve",
+    "gota": "yarn workspace @gota/ds run start"
   }
 }
