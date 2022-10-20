@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Begin of gota-project",
   "main": "index.js",
-  "repository": "git@github.com:JoaoMussi/gota-project.git",
+  "repository": "https://github.com/JoaoMussi/gota-project.git",
   "author": "Jon",
   "license": "MIT",
   "private": true,
